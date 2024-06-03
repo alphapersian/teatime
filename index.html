@@ -336,7 +336,8 @@
 <body class="" style="visibility: hidden;">
 
 <section id="top_sect" class="second">
-    <button id="main_btn" onclick="DemoApp.sendMessage('');">Send «Hello, World!»</button>
+    <button id="ahmad" onclick="DemoApp.showAlert('hello ahmad');">say hello to ahmad</button>
+    <button id="main_btn"="DemoApp.sendMessage('');">Send «Hello, World!»</button>
     <button id="with_webview_btn" onclick="DemoApp.sendMessage('', true);">Send «Hello, World!» with inline webview button</button>
     <button id="data_btn" onclick="DemoApp.sendTime(true);">Send current time to bot (x10)</button>
     <button onclick="DemoApp.expand();">Expand Webview</button>
@@ -585,6 +586,7 @@
         // Alerts
         showAlert(message) {
             Telegram.WebApp.showAlert(message);
+            Telegram.WebApp.showProgress(50);
         },
         showConfirm(message) {
             Telegram.WebApp.showConfirm(message);
@@ -728,7 +730,7 @@
             // DISABLE BACKEND FOR FRONTEND DEMO
             // YOU CAN USE YOUR OWN REQUESTS TO YOUR OWN BACKEND
             // CHANGE THIS CODE TO YOUR OWN
-            return Telegram.WebApp.sendData("Hello dear user you data has been sent");
+            
             return onCallback && onCallback({error: '# 1 This function (' + method + ') should send requests to your backend. Please, change this code to your own.'});
 
             const authData = DemoApp.initData || '';
